@@ -336,3 +336,9 @@ footer.pie { background: var(--vino); color: var(--rosa-claro); padding: 56px 0 
 }
 
 [hidden] { display: none !important; }
+
+/* Portada: en escritorio el vídeo vertical se ve entero (9:16), sin recorte ni ampliación borrosa */
+@media (min-width: 861px) {
+  .hero-v2 .contenedor { grid-template-columns: 1fr auto; }
+  .hero-v2 .foto { min-height: 0; height: min(88vh, 860px); aspect-ratio: 9 / 16; }
+}
