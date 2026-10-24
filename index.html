@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Marca: LIPKISS (elegida por Fabio el 24-oct-2026). -->
-  <title>LIPKISS · Lip oil efecto jugoso</title>
-  <meta name="description" content="Aceite de labios con sensación de calor y acabado jugoso. Aspecto más lleno y brillante al instante, efecto temporal. Envío gratis a España.">
+  <title>LIPKISS · Lip oil efecto calor</title>
+  <meta name="description" content="Aceite de labios con efecto calor y acabado jugoso. Aspecto más lleno y brillante al instante, efecto temporal. Envío gratis a España.">
+  <meta property="og:title" content="LIPKISS · Lip oil efecto calor">
+  <meta property="og:description" content="Labios jugosos en un gesto. Envío gratis a España.">
+  <meta property="og:image" content="img/seda.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -19,8 +22,8 @@
   <div class="contenedor">
     <a class="logo" href="#">LIPKISS</a>
     <nav aria-label="Principal">
-      <a href="#como">Cómo se siente</a>
-      <a href="#uso">Cómo usarlo</a>
+      <a href="#heat">El efecto</a>
+      <a href="#resultado">Resultado</a>
       <a href="#faq">Preguntas</a>
       <a href="#comprar">Comprar</a>
     </nav>
@@ -28,41 +31,20 @@
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero-v2">
     <div class="contenedor">
-      <div class="aparece">
+      <div class="texto">
         <span class="etiqueta">Lip oil · Heat effect</span>
         <h1>Labios <em>jugosos</em>,<br>en un gesto.</h1>
-        <p class="lead">Un aceite de labios con un toque de calor que despierta el labio y lo deja con un acabado brillante y un aspecto más lleno al instante. Sin agujas, sin citas, cuando tú quieras.</p>
-        <div class="acciones">
+        <p class="lead">Un aceite de labios con un toque de calor que despierta el labio y lo deja con un brillo de cristal y un aspecto más lleno al instante. Sin agujas, sin citas, cuando tú quieras.</p>
+        <div class="acciones" style="display:flex;gap:14px;flex-wrap:wrap">
           <a class="btn" href="#comprar">Elegir mi pack</a>
-          <a class="btn secundario" href="#como">Cómo funciona</a>
+          <a class="btn secundario" href="#heat">Cómo funciona</a>
         </div>
         <p class="nota">Efecto cosmético temporal · Hormigueo suave al aplicarlo</p>
       </div>
-      <div class="escena aparece" aria-label="Imagen del producto">
-        <!-- FOTO PROVISIONAL: cuando tengas fotos reales del producto, descomenta esta línea y pon el archivo en img/
-        <img class="foto-real" src="img/producto-hero.jpg" alt="Aceite de labios LIPKISS sobre fondo crema">
-        -->
-        <svg class="bote" viewBox="0 0 120 320" aria-hidden="true">
-          <defs>
-            <linearGradient id="vidrio" x1="0" x2="1">
-              <stop offset="0" stop-color="#e8b6b3"/>
-              <stop offset=".45" stop-color="#f6dcd8"/>
-              <stop offset="1" stop-color="#c98b8b"/>
-            </linearGradient>
-            <linearGradient id="tapon" x1="0" x2="1">
-              <stop offset="0" stop-color="#3f0f1d"/>
-              <stop offset=".5" stop-color="#7a2a3e"/>
-              <stop offset="1" stop-color="#3f0f1d"/>
-            </linearGradient>
-          </defs>
-          <rect x="30" y="0" width="60" height="120" rx="10" fill="url(#tapon)"/>
-          <rect x="22" y="118" width="76" height="196" rx="22" fill="url(#vidrio)"/>
-          <rect x="34" y="132" width="10" height="160" rx="5" fill="#fff" opacity=".45"/>
-          <text x="60" y="230" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="12" letter-spacing="1.5" fill="#5b1a2c">LIPKISS</text>
-        </svg>
-        <span class="provisional">Imagen ilustrativa provisional</span>
+      <div class="foto">
+        <img src="img/seda.jpg" alt="Aceite de labios rojo sobre seda color vino" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -76,30 +58,48 @@
     </div>
   </div>
 
-  <section class="bloque" id="como">
+  <section class="bloque">
     <div class="contenedor">
       <div class="cabecera-bloque aparece">
-        <span class="etiqueta">Cómo se siente</span>
-        <h2>Calor, brillo y <em>volumen visual</em></h2>
-        <p>Lo que vas a notar desde que lo aplicas. El efecto es cosmético y temporal, y varía de una persona a otra.</p>
+        <span class="etiqueta">El ritual</span>
+        <h2>Brillo de <em>cristal</em>, siempre a mano</h2>
+        <p>Aplicador de esponja suave, textura ligera y no pegajosa. Cabe en cualquier bolso.</p>
       </div>
-      <div class="pasos">
-        <div class="paso aparece">
-          <div class="num">01</div>
-          <h3>Un toque de calor</h3>
-          <p>Al aplicarlo notarás un hormigueo cálido. Es parte de la experiencia y se suaviza en unos minutos.</p>
-        </div>
-        <div class="paso aparece">
-          <div class="num">02</div>
-          <h3>Labio despierto</h3>
-          <p>El labio se ve más rosado, más definido y con un aspecto más lleno.</p>
-        </div>
-        <div class="paso aparece">
-          <div class="num">03</div>
-          <h3>Acabado jugoso</h3>
-          <p>Un brillo tipo cristal, no pegajoso, que puedes llevar solo o encima de tu labial.</p>
+      <div class="galeria">
+        <figure class="aparece"><img src="img/labios.jpg" alt="Labios con acabado brillante tipo cristal" loading="lazy"><figcaption>Acabado jugoso</figcaption></figure>
+        <figure class="aparece"><img src="img/aplicador.jpg" alt="Gota de aceite cayendo del aplicador rosa" loading="lazy"><figcaption>Aplicador de esponja</figcaption></figure>
+        <figure class="aparece"><img src="img/mano.jpg" alt="Mano sosteniendo el bote rojo de aceite de labios" loading="lazy"><figcaption>3,6 ml · tamaño bolso</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque heat" id="heat">
+    <div class="contenedor dos-col">
+      <div class="aparece">
+        <img src="img/guindilla.jpg" alt="Bote de aceite de labios junto a una guindilla roja sobre mármol negro" loading="lazy">
+      </div>
+      <div class="aparece">
+        <span class="etiqueta">Heat effect</span>
+        <h2>Un toque de <em>calor</em> que despierta el labio</h2>
+        <p style="margin-top:18px">Al aplicarlo notarás un hormigueo cálido. Llega más color al labio, se ve más rosado, más definido y con un aspecto más lleno. El brillo hace el resto.</p>
+        <div class="datos">
+          <div><strong>0 min</strong>hormigueo cálido</div>
+          <div><strong>3–5 min</strong>labio más rosado y jugoso</div>
+          <div><strong>Temporal</strong>varía según la persona</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="bloque ba" id="resultado">
+    <div class="contenedor">
+      <div class="cabecera-bloque aparece">
+        <span class="etiqueta">Lo que puedes esperar</span>
+        <h2>Antes y <em>después</em></h2>
+        <p>Un efecto sutil y natural: más color, más brillo y un aspecto más lleno durante un rato.</p>
+      </div>
+      <img class="aparece" src="img/antes-despues.jpg" alt="Simulación generada con IA del antes y después de aplicar el aceite de labios" loading="lazy">
+      <p class="aviso-ia">Imagen de simulación generada con IA para ilustrar el efecto. El resultado real es temporal y varía según la persona.</p>
     </div>
   </section>
 
@@ -148,7 +148,7 @@
           <a class="btn ancho" data-pack="3" href="#">Comprar pack de 3</a>
         </div>
       </div>
-      <p class="pago-seguro">Pago con tarjeta, Apple Pay o Google Pay a través de Stripe. No guardamos los datos de tu tarjeta.<br>Envío en 10–20 días laborables.</p>
+      <p class="pago-seguro">Pago con tarjeta, Apple Pay o Google Pay a través de Stripe. No guardamos los datos de tu tarjeta.<br>Envío en 10–20 días laborables. En tu extracto el cargo aparecerá como «AIRMATE* LIPKISS».</p>
     </div>
   </section>
 
@@ -197,6 +197,10 @@
           <p>Notarás un hormigueo cálido al aplicarlo. Si tienes los labios sensibles, empieza con una capa fina. Si el escozor es fuerte, retíralo con agua.</p>
         </details>
         <details>
+          <summary>¿Cómo es el envase que recibo?</summary>
+          <p>Un bote rojo translúcido de 3,6 ml con aplicador de esponja rosa, como el de las imágenes. La etiqueta del bote puede venir con el nombre del fabricante.</p>
+        </details>
+        <details>
           <summary>¿Cuándo me llega?</summary>
           <p>Entre 10 y 20 días laborables desde la compra. Te enviamos el número de seguimiento por email cuando sale el pedido.</p>
         </details>
@@ -223,7 +227,7 @@
       <h4>Ayuda</h4>
       <a href="legal.html#envios">Envíos</a>
       <a href="legal.html#devoluciones">Devoluciones</a>
-      <a href="mailto:hola@PENDIENTE.com">Contacto</a>
+      <a href="mailto:lipkissuport@gmail.com">Contacto</a>
     </div>
     <div>
       <h4>Legal</h4>
@@ -232,7 +236,7 @@
       <a href="legal.html#privacidad">Privacidad</a>
       <a href="legal.html#cookies">Cookies</a>
     </div>
-    <div class="legal-linea">© 2026 LIPKISS. Producto cosmético de efecto temporal.</div>
+    <div class="legal-linea">© 2026 LIPKISS. Producto cosmético de efecto temporal. Las imágenes de esta web se han creado con ayuda de IA a partir del producto real.</div>
   </div>
 </footer>
 
@@ -242,8 +246,8 @@
 </div>
 
 <script>
-  // Payment Links de Stripe: pega aquí los 3 enlaces (dashboard.stripe.com → Payment Links).
-  // Mientras estén vacíos, los botones se desactivan para que nadie pague por error.
+  // Payment Links de Stripe (cuenta de Airmate, metadata marca=lipkiss).
+  // Si alguno se deja vacío, su botón se desactiva para que nadie pague por error.
   const STRIPE_LINKS = {
     1: "https://buy.stripe.com/14AbJ18lp7m4ers0jv2Ry0Q",
     2: "https://buy.stripe.com/28EbJ17hl35Obfg4zL2Ry0R",
