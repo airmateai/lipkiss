@@ -7,7 +7,7 @@
   <title>LIPKISS · Lip oil efecto calor</title>
   <meta name="description" content="Aceite de labios con efecto calor y acabado jugoso. Aspecto más lleno y brillante al instante, efecto temporal. Envío gratis a España.">
   <meta property="og:title" content="LIPKISS · Lip oil efecto calor">
-  <meta property="og:description" content="Labios jugosos en un gesto. Envío gratis a España.">
+  <meta property="og:description" content="Labios jugosos en un gesto. Precio de lanzamiento y envío gratis a España.">
   <meta property="og:image" content="img/seda.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,10 @@
 </head>
 <body>
 
-<div class="aviso">Envío gratis a toda España · Pago seguro con Stripe</div>
+<div class="aviso lanzamiento" data-solo-lanzamiento>
+  Precio de lanzamiento · termina en <span class="reloj" data-reloj>—</span>
+</div>
+<div class="aviso" data-solo-normal hidden>Envío gratis a toda España · Pago seguro con Stripe</div>
 
 <header class="cab">
   <div class="contenedor">
@@ -36,25 +39,48 @@
       <div class="texto">
         <span class="etiqueta">Lip oil · Heat effect</span>
         <h1>Labios <em>jugosos</em>,<br>en un gesto.</h1>
-        <p class="lead">Un aceite de labios con un toque de calor que despierta el labio y lo deja con un brillo de cristal y un aspecto más lleno al instante. Sin agujas, sin citas, cuando tú quieras.</p>
-        <div class="acciones" style="display:flex;gap:14px;flex-wrap:wrap">
-          <a class="btn" href="#comprar">Elegir mi pack</a>
-          <a class="btn secundario" href="#heat">Cómo funciona</a>
+        <p class="lead">Un toque de calor que despierta el labio y lo deja con brillo de cristal y un aspecto más lleno al instante. Sin agujas, sin citas, cuando tú quieras.</p>
+
+        <form class="selector" id="selector" aria-label="Elige tu pack">
+          <label class="opcion">
+            <input type="radio" name="pack" value="1">
+            <span class="punto"></span>
+            <span><span class="nombre">1 unidad</span><br><span class="sub">Para probarlo</span></span>
+            <span class="precio-op"><span data-precio="1"></span><span class="despues" data-despues="1"></span></span>
+          </label>
+          <label class="opcion">
+            <input type="radio" name="pack" value="2" checked>
+            <span class="badge">Recomendado</span>
+            <span class="punto"></span>
+            <span><span class="nombre">Pack de 2</span><br><span class="ahorro" data-ahorro="2"></span></span>
+            <span class="precio-op"><span data-precio="2"></span><span class="despues" data-despues="2"></span></span>
+          </label>
+          <label class="opcion">
+            <input type="radio" name="pack" value="3">
+            <span class="punto"></span>
+            <span><span class="nombre">Pack de 3</span><br><span class="ahorro" data-ahorro="3"></span></span>
+            <span class="precio-op"><span data-precio="3"></span><span class="despues" data-despues="3"></span></span>
+          </label>
+        </form>
+
+        <a class="btn grande brillo" id="cta" href="#">Comprar</a>
+        <div class="garantias">
+          <span>Envío gratis</span><span>Pago seguro</span><span>Apple Pay y Google Pay</span>
         </div>
         <p class="nota">Efecto cosmético temporal · Hormigueo suave al aplicarlo</p>
       </div>
       <div class="foto">
-        <img src="img/seda.jpg" alt="Aceite de labios rojo sobre seda color vino" fetchpriority="high">
+        <video autoplay muted loop playsinline preload="metadata" poster="img/seda.jpg" aria-label="Aceite de labios rojo sobre seda color vino">
+          <source src="img/hero.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
 
-  <div class="franja">
-    <div class="contenedor">
-      <div><strong>Al instante</strong>acabado jugoso</div>
-      <div><strong>Calor suave</strong>hormigueo al aplicar</div>
-      <div><strong>Envío gratis</strong>a toda España</div>
-      <div><strong>Pago seguro</strong>con Stripe</div>
+  <div class="cinta" aria-hidden="true">
+    <div class="pista">
+      <span>Efecto calor</span><span>Brillo de cristal</span><span>Envío gratis</span><span>Aspecto más lleno</span><span>Tamaño bolso</span><span>Pago seguro</span>
+      <span>Efecto calor</span><span>Brillo de cristal</span><span>Envío gratis</span><span>Aspecto más lleno</span><span>Tamaño bolso</span><span>Pago seguro</span>
     </div>
   </div>
 
@@ -87,6 +113,7 @@
           <div><strong>3–5 min</strong>labio más rosado y jugoso</div>
           <div><strong>Temporal</strong>varía según la persona</div>
         </div>
+        <a class="btn brillo" href="#comprar" style="margin-top:30px;background:var(--crema);color:var(--vino)">Lo quiero</a>
       </div>
     </div>
   </section>
@@ -106,7 +133,8 @@
   <section class="bloque" id="comprar">
     <div class="contenedor">
       <div class="cabecera-bloque aparece">
-        <span class="etiqueta">Elige tu pack</span>
+        <span class="etiqueta" data-solo-lanzamiento>Precio de lanzamiento · termina en <span data-reloj>—</span></span>
+        <span class="etiqueta" data-solo-normal hidden>Elige tu pack</span>
         <h2>Uno para ti, <em>otro para el bolso</em></h2>
         <p>Envío gratis en todos los packs. Precios con impuestos incluidos.</p>
       </div>
@@ -114,8 +142,9 @@
         <div class="pack aparece">
           <h3>1 unidad</h3>
           <p class="desc">Para probarlo</p>
-          <div class="precio">19,90 €</div>
-          <div class="unidad">19,90 € / unidad</div>
+          <div class="precio" data-precio="1"></div>
+          <div class="unidad" data-unidad="1"></div>
+          <p class="despues" data-despues-largo="1"></p>
           <ul>
             <li>1 lip oil de 3,6 ml</li>
             <li>Envío gratis</li>
@@ -126,20 +155,24 @@
           <span class="sello">Recomendado</span>
           <h3>Pack de 2</h3>
           <p class="desc">Uno en casa, otro en el bolso</p>
-          <div class="precio">29,90 €</div>
-          <div class="unidad">14,95 € / unidad</div>
+          <div class="precio" data-precio="2"></div>
+          <div class="unidad" data-unidad="2"></div>
+          <p class="despues" data-despues-largo="2"></p>
+          <span class="ahorro" data-ahorro="2"></span>
           <ul>
             <li>2 lip oils de 3,6 ml</li>
             <li>Envío gratis</li>
             <li>Ideal para compartir o regalar</li>
           </ul>
-          <a class="btn ancho" data-pack="2" href="#">Comprar pack de 2</a>
+          <a class="btn ancho brillo" data-pack="2" href="#">Comprar pack de 2</a>
         </div>
         <div class="pack aparece">
           <h3>Pack de 3</h3>
           <p class="desc">Para ti y tus amigas</p>
-          <div class="precio">39,90 €</div>
-          <div class="unidad">13,30 € / unidad</div>
+          <div class="precio" data-precio="3"></div>
+          <div class="unidad" data-unidad="3"></div>
+          <p class="despues" data-despues-largo="3"></p>
+          <span class="ahorro" data-ahorro="3"></span>
           <ul>
             <li>3 lip oils de 3,6 ml</li>
             <li>Envío gratis</li>
@@ -184,6 +217,10 @@
         <h2>Lo que nos <em>preguntáis</em></h2>
       </div>
       <div class="faq">
+        <details>
+          <summary>¿Hasta cuándo dura el precio de lanzamiento?</summary>
+          <p>Hasta el 1 de noviembre de 2026 a las 23:59 (hora peninsular). A partir del 2 de noviembre los precios pasan a 24,90 € (1 unidad), 34,90 € (pack de 2) y 44,90 € (pack de 3).</p>
+        </details>
         <details>
           <summary>¿Hace crecer los labios?</summary>
           <p>No. Es un cosmético: el calor activa el labio y el brillo le da un aspecto más jugoso y lleno durante un rato. El efecto es temporal y no sustituye ningún tratamiento estético.</p>
@@ -236,33 +273,83 @@
       <a href="legal.html#privacidad">Privacidad</a>
       <a href="legal.html#cookies">Cookies</a>
     </div>
-    <div class="legal-linea">© 2026 LIPKISS. Producto cosmético de efecto temporal. Las imágenes de esta web se han creado con ayuda de IA a partir del producto real.</div>
+    <div class="legal-linea">© 2026 LIPKISS. Producto cosmético de efecto temporal. Las imágenes y vídeos de esta web se han creado con ayuda de IA a partir del producto real.</div>
   </div>
 </footer>
 
 <div class="barra-movil">
-  <span>Desde 19,90 €</span>
-  <a class="btn" href="#comprar">Comprar</a>
+  <span class="info"><span data-barra-precio>Desde 19,90 €</span><small data-solo-lanzamiento>Lanzamiento · <span data-reloj>—</span></small></span>
+  <a class="btn brillo" href="#" data-barra-cta>Comprar</a>
 </div>
 
 <script>
+  // Oferta de lanzamiento REAL: al pasar FIN_LANZAMIENTO la web cambia sola a los precios y enlaces normales.
+  // No alargar la fecha ni reiniciar la cuenta atrás: eso convertiría la oferta en una urgencia falsa.
+  const FIN_LANZAMIENTO = new Date("2026-11-01T23:59:59+01:00");
+
   // Payment Links de Stripe (cuenta de Airmate, metadata marca=lipkiss).
-  // Si alguno se deja vacío, su botón se desactiva para que nadie pague por error.
-  const STRIPE_LINKS = {
-    1: "https://buy.stripe.com/14AbJ18lp7m4ers0jv2Ry0Q",
-    2: "https://buy.stripe.com/28EbJ17hl35Obfg4zL2Ry0R",
-    3: "https://buy.stripe.com/4gMaEX4596i00AC3vH2Ry0S"
+  const TARIFAS = {
+    lanzamiento: {
+      precios: { 1: 19.90, 2: 29.90, 3: 39.90 },
+      links: {
+        1: "https://buy.stripe.com/14AbJ18lp7m4ers0jv2Ry0Q",
+        2: "https://buy.stripe.com/28EbJ17hl35Obfg4zL2Ry0R",
+        3: "https://buy.stripe.com/4gMaEX4596i00AC3vH2Ry0S"
+      }
+    },
+    normal: {
+      precios: { 1: 24.90, 2: 34.90, 3: 44.90 },
+      links: {
+        1: "https://buy.stripe.com/00w4gz1X121Kers1nz2Ry0T",
+        2: "https://buy.stripe.com/8x228r8lpeOw4QS5DP2Ry0U",
+        3: "https://buy.stripe.com/5kQdR9eJN49Sbfggit2Ry0V"
+      }
+    }
   };
 
-  document.querySelectorAll("[data-pack]").forEach(btn => {
-    const url = STRIPE_LINKS[btn.dataset.pack];
-    if (url) {
-      btn.href = url;
-    } else {
-      btn.setAttribute("aria-disabled", "true");
-      btn.textContent = "Próximamente";
+  const eur = n => n.toFixed(2).replace(".", ",") + " €";
+  const enLanzamiento = () => Date.now() < FIN_LANZAMIENTO.getTime();
+
+  function pintar() {
+    const lanz = enLanzamiento();
+    const t = lanz ? TARIFAS.lanzamiento : TARIFAS.normal;
+    const unidadSuelta = t.precios[1];
+
+    document.querySelectorAll("[data-solo-lanzamiento]").forEach(el => el.hidden = !lanz);
+    document.querySelectorAll("[data-solo-normal]").forEach(el => el.hidden = lanz);
+
+    for (const n of [1, 2, 3]) {
+      document.querySelectorAll(`[data-precio="${n}"]`).forEach(el => el.textContent = eur(t.precios[n]));
+      document.querySelectorAll(`[data-unidad="${n}"]`).forEach(el => el.textContent = eur(t.precios[n] / n) + " / unidad");
+      document.querySelectorAll(`[data-despues="${n}"]`).forEach(el => el.textContent = lanz ? "desde 2 nov: " + eur(TARIFAS.normal.precios[n]) : "");
+      document.querySelectorAll(`[data-despues-largo="${n}"]`).forEach(el => el.textContent = lanz ? "A partir del 2 de noviembre: " + eur(TARIFAS.normal.precios[n]) : "");
+      // Ahorro real frente a comprar las mismas unidades sueltas al precio vigente.
+      const ahorro = unidadSuelta * n - t.precios[n];
+      document.querySelectorAll(`[data-ahorro="${n}"]`).forEach(el => el.textContent = ahorro > 0 ? "Ahorras " + eur(ahorro) : "");
+      document.querySelectorAll(`[data-pack="${n}"]`).forEach(el => el.href = t.links[n]);
     }
-  });
+
+    const sel = document.querySelector("#selector input:checked").value;
+    const cta = document.getElementById("cta");
+    cta.href = t.links[sel];
+    cta.textContent = "Comprar · " + eur(t.precios[sel]);
+    document.querySelector("[data-barra-cta]").href = t.links[sel];
+    document.querySelector("[data-barra-precio]").textContent = eur(t.precios[sel]);
+  }
+
+  function reloj() {
+    const ms = FIN_LANZAMIENTO.getTime() - Date.now();
+    if (ms <= 0) { pintar(); return; }
+    const d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
+    const p = x => String(x).padStart(2, "0");
+    const txt = (d > 0 ? d + "d " : "") + p(h) + "h " + p(m) + "m " + p(s) + "s";
+    document.querySelectorAll("[data-reloj]").forEach(el => el.textContent = txt);
+  }
+
+  document.getElementById("selector").addEventListener("change", pintar);
+  pintar();
+  reloj();
+  setInterval(reloj, 1000);
 
   const obs = new IntersectionObserver(entradas => {
     entradas.forEach(e => {
